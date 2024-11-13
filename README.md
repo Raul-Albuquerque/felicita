@@ -13,7 +13,7 @@
 A plataforma é segura e eficiente, onde os clientes podem encontrar o presente ideal para qualquer pessoa, com facilidade e confiança.
 
 ## Tecnologias
-[![Techs](https://skillicons.dev/icons?i=vite,react,javascript,python,django,sqlite,figma&perline=3)](https://skillicons.dev)
+[![Techs](https://skillicons.dev/icons?i=vite,react,javascript,python,django,sqlite,figma,docker&perline=3)](https://skillicons.dev)
 
 ## Planejamento
 

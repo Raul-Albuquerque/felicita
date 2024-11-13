@@ -16,7 +16,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -27,7 +26,6 @@ SECRET_KEY = 'django-insecure-p1yqkf-gxv#3u)q)*_32z&!rfqkj=0s-+(bs9b1-v@nuu-%&uo
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -88,6 +86,17 @@ DATABASES = {
         "PORT": os.environ.get("SQL_PORT", "5432"),
     }
 }
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": os.environ.get("SQL_ENGINE"),
+#         "NAME": os.environ.get("SQL_DATABASE"),
+#         "USER": os.environ.get("SQL_USER"),
+#         "PASSWORD": os.environ.get("SQL_PASSWORD"),
+#         "HOST": os.environ.get("SQL_HOST"),
+#         "PORT": os.environ.get("SQL_PORT"),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
