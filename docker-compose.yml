@@ -1,0 +1,40 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"  # Porta padrão do Vite
+    volumes:
+      - ./frontend:/app  # Sincroniza o código do frontend
+      - /app/node_modules  # Evita conflitos de módulos no volume
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - backend  # Opcional, caso o frontend precise esperar o backend iniciar
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"  # Porta padrão do Django
+    volumes:
+      - ./backend:/app  # Sincroniza o código do backend
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings  # Ajuste para o módulo de settings correto
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres  # Configuração para o banco PostgreSQL
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persistência dos dados do banco
+
+volumes:
+  postgres_data:
