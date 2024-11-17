@@ -9,15 +9,14 @@ from products.serializers import ProductSerializer
 def get_products(request):
   products = Product.objects.all()
   serializer = ProductSerializer(products, many=True)
-  return Response(serializer.data)
+  return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['GET'])
 def get_product(request, pk):
   try:
     product = Product.objects.get(pk=pk)
-    images = product.images.all()
     serializer = ProductSerializer(product)
-    return Response(serializer.data)
+    return Response(serializer.data, status=status.HTTP_200_OK)
   except Product.DoesNotExist:
     return Response(status=status.HTTP_404_NOT_FOUND)
 
