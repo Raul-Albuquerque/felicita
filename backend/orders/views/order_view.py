@@ -23,51 +23,42 @@ def get_order(request,pk):
 	
 @api_view(['POST'])
 def create_order(request):
-    # Inicializa o serializador com os dados do pedido
-    serializer = OrderSerializer(data=request.data)
-    if serializer.is_valid():
-        # Salva o pedido (Order) no banco de dados
-        order = serializer.save()
+	serializer = OrderSerializer(data=request.data)
+	if serializer.is_valid():
+		order = serializer.save()
 
-        # Cria o pagamento relacionado ao pedido
-        Payment.objects.create(
-            order_id=order,
-            amount=1200.00,  # Ajuste para calcular dinamicamente se necessário
-        )
+		Payment.objects.create(
+			order_id=order,
+			amount=1200.00,
+		)
 
-        # Processa os itens do pedido
-        items = request.data.get('items', [])
-        for item in items:
-            product_id = item.get('product_id')
-            quantity = item.get('quantity')
-            price = item.get('price')
+		items = request.data.get('items', [])
+		for item in items:
+			product_id = item.get('product_id')
+			quantity = item.get('quantity')
+			price = item.get('price')
 
-            # Validação básica
-            if not product_id or not quantity:
-                return Response(
-                    {"error": "Cada item deve conter 'product_id' e 'quantity'."},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
+			if not product_id or not quantity:
+				return Response(
+					{"error": "Cada item deve conter 'product_id' e 'quantity'."},
+					status=status.HTTP_400_BAD_REQUEST
+				)
 
-            # Busca o produto no banco de dados
-            try:
-                product = Product.objects.get(id=product_id)
-            except Product.DoesNotExist:
-                return Response(
-                    {"error": f"Produto com ID {product_id} não encontrado."},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
+			try:
+				product = Product.objects.get(id=product_id)
+			except Product.DoesNotExist:
+				return Response(
+					{"error": f"Produto com ID {product_id} não encontrado."},
+					status=status.HTTP_400_BAD_REQUEST
+				)
 
-            # Cria o item do pedido (OrderItem)
-            OrderItem.objects.create(
-                order_id=order,
-                product_id=product,
-                quantity=quantity,
-                price=price
-            )
+			OrderItem.objects.create(
+				order_id=order,
+				product_id=product,
+				quantity=quantity,
+				price=price
+			)
 
-        # Retorna a resposta com os dados do pedido criado
-        return Response(OrderSerializer(order).data, status=status.HTTP_201_CREATED)
+			return Response(OrderSerializer(order).data, status=status.HTTP_201_CREATED)
 
-    # Caso os dados do pedido sejam inválidos
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+	return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
