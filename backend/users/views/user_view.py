@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -62,3 +62,9 @@ def login_user(request):
       return Response({"detail": "User was logout"}, status=status.HTTP_403_FORBIDDEN)
   else:
     return Response({"detail": "Invalid credentials."}, status=status.HTTP_401_UNAUTHORIZED)
+  
+
+@api_view(['GET'])
+def logout_user(request):
+  if request.user.is_authenticated:
+    logout(request)
