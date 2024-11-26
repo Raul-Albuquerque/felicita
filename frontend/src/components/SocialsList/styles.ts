@@ -6,15 +6,14 @@ export const SocialListContainer = styled.ul`
   justify-content: end;
   gap: 10px;
 
+  li {
+    list-style: none;
+  }
+
   @media (max-width: 1160px) {
     display: none;
   }
 `
-
-export const SocialListItem = styled.li`
-  list-style: none;
-`
-
 export const SocialListLink = styled.a`
   color: var(--purple);
   font-size: 20px;
