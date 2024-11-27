@@ -4,6 +4,8 @@
   --purple: #8D40D7;
   --green: #36D681;
   --white: #fff;
+  --pure-black: #000;
+  --black: rgba(0,0,0,0.1)
   --gray-text: #f2f2f2;
   --text-white: #FBFCF9;
   --border-color: rgba(83,90,96,0.15);
@@ -12,6 +14,7 @@
   --text-red: #E53939;
   --text-yellow: #FBBC05;
   --custom-gradient: linear-gradient(to right, #8D40D7, #36D681);
+  --select-bg: rgba(73,80,87,0.1);
 }
 
 * {
