@@ -7,4 +7,9 @@ export const SearchButton = styled.button`
   border: 1px solid transparent;
   border-radius: 0 8px 8px 0;
   color: var(--white);
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `

@@ -1,4 +1,5 @@
 import { SearchBar } from '../SearchBar'
+import { UserMenu } from '../UserMenu'
 
 import * as S from './styles'
 
@@ -9,7 +10,8 @@ export const Header = () => {
       <S.Logo href='#'>
         <img src='/logo.png' alt='Felicità logo' />
       </S.Logo>
-      <SearchBar />      
+      <SearchBar />
+      <UserMenu />      
     </S.HeaderContainer>
   )
 }
