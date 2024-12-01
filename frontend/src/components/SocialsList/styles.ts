@@ -15,13 +15,12 @@ export const SocialListContainer = styled.ul`
   }
 `
 export const SocialListLink = styled.a`
-  color: var(--purple);
-  font-size: 20px;
-  background-color: var(--white);
-  border-radius: 50%;
-  padding: 4px 6px;
+  
+  img {
+    width: 24px;
 
-  &:hover {
-    color: var(--green);
+    &:hover {
+      opacity: 0.7;
+    }
   }
 `
