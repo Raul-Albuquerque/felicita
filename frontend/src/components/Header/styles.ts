@@ -9,4 +9,13 @@ export const HeaderContainer = styled.header`
 
 export const HeaderSearchMobile = styled.div``
 
-export const Logo = styled.a``
+export const Logo = styled.a`
+
+  @media (max-width: 1024px) {
+    img {
+      max-width: 120px;
+      width: 100%;
+    }
+  }
+
+`

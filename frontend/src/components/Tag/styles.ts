@@ -9,4 +9,8 @@ export const CartTag = styled.span`
   position: absolute;
   right: -4px;
   bottom: 1px;
+
+  @media (max-width: 1024px) {
+    font-size: 10px;
+  }
 `

@@ -16,7 +16,7 @@ export const SearchButton = styled.button`
 
 export const SearchButtonRounded = styled.button`
   background-color: var(--green);
-  padding: 10px 12px;
+  padding: 7px 9px;
   border-radius: 50%;
   border: none;
 

@@ -25,6 +25,10 @@ export const UserMenuNav = styled.nav`
   i {
     font-size: 28px;
     color: var(--dark-gray);
+
+    @media (max-width: 1024px) {
+      font-size: 20px;
+    }
   }
 `
 
@@ -33,7 +37,11 @@ export const MenuItemProfile = styled.li``
 export const MenuItemCart = styled.li`
 
   i {
-      font-size: 28px;
+    font-size: 28px;
+
+    @media (max-width: 1024px) {
+      font-size: 20px;
+    }
   }
 
   div {
@@ -45,5 +53,9 @@ export const MenuItemTitle = styled.span`
   font-size: 12px;
   font-weight: 400;
   color: var(--dark-gray);
+
+  @media (max-width: 1024px) {
+    font-size: 10px;
+  }
 `
 
