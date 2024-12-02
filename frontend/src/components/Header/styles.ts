@@ -7,6 +7,6 @@ export const HeaderContainer = styled.header`
   padding: 30px 0 ;
 `
 
-export const Logo = styled.a`
-  
-`
+export const HeaderSearchMobile = styled.div``
+
+export const Logo = styled.a``

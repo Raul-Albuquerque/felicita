@@ -13,3 +13,25 @@ export const SearchButton = styled.button`
     opacity: 0.7;
   }
 `
+
+export const SearchButtonRounded = styled.button`
+  background-color: var(--green);
+  padding: 10px 12px;
+  border-radius: 50%;
+  border: none;
+
+  i {
+    color: var(--white) !important;
+    font-size: 12px !important;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  @media (min-width: 1024px) {
+    & {
+      display: none;
+    }
+  }
+`

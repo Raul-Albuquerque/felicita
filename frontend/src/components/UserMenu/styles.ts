@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const UserMenuNav = styled.nav`
-
   ul, li {
     display: flex;
     justify-content: end;
@@ -27,13 +26,6 @@ export const UserMenuNav = styled.nav`
     font-size: 28px;
     color: var(--dark-gray);
   }
-
-  span {
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--dark-gray);
-  }
-
 `
 
 export const MenuItemProfile = styled.li``
@@ -47,7 +39,11 @@ export const MenuItemCart = styled.li`
   div {
     position: relative;
   }
+`
 
-
+export const MenuItemTitle = styled.span`
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--dark-gray);
 `
 

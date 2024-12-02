@@ -1,9 +1,23 @@
 import styled from 'styled-components'
 
 export const SearchBarContainer = styled.form`
+  width: 60%;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
+
+  @media (max-width: 1023px) {
+    & {
+      display: none;
+    }
+  }
+`
+
+export const SearchBarContainerMobile = styled.form`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export const CategoriesSelect = styled.select`
