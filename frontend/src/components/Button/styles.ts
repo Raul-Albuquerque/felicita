@@ -35,3 +35,23 @@ export const SearchButtonRounded = styled.button`
     }
   }
 `
+
+export const PrimaryBtn = styled.button`
+  background-color: var(--purple);
+  color: var(--white);
+  border: none;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 16px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @media (max-width:640px) {
+    width: 100%;
+    display: block;
+  }
+`

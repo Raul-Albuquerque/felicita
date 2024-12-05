@@ -23,7 +23,7 @@ export const Button = ({type, children, url}: Props) => {
         <i className="bi bi-search"></i>
       </S.SearchButtonRounded>
     ) : type === 'primary' ? (
-      <button>btn Primary</button>
+      <S.PrimaryBtn>{children}</S.PrimaryBtn>
     ) : (
       <button>btn secondary</button>
     )}

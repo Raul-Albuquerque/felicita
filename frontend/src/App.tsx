@@ -1,5 +1,6 @@
 import './App.css'
 import { Header } from './components/Header'
+import { Hero } from './components/Hero'
 import { TopBar } from './components/TopBar'
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <>
       <TopBar />
       <Header/>
+      <Hero />
     </>
   )
 }
